@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>উদ্ভাবন কোচিং সেন্টার - Billing</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    table, th, td {
+      border: 1px solid #333;
+    }
+    th, td {
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background: #f0f0f0;
+    }
+    .due {
+      background: #ffcccc;
+    }
+    .paid {
+      background: #ccffcc;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>উদ্ভাবন কোচিং সেন্টার - Billing System (2025)</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>নাম</th>
+        <th>ক্লাস</th>
+        <th>পড়া শুরু</th>
+        <th>মে (৳800)</th>
+        <th>জুন (৳800)</th>
+        <th>মোট বাকি</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>সাদিকা</td>
+        <td>১০ম</td>
+        <td>মে</td>
+        <td class="due">Due</td>
+        <td class="due">Due</td>
+        <td id="sadika-due"></td>
+      </tr>
+      <tr>
+        <td>নাদিয়া</td>
+        <td>১০ম</td>
+        <td>মে</td>
+        <td class="paid">Paid</td>
+        <td class="due">Due</td>
+        <td id="nadia-due"></td>
+      </tr>
+      <tr>
+        <td>খুশি</td>
+        <td>১০ম</td>
+        <td>১৫ জুন</td>
+        <td>N/A</td>
+        <td class="due">Due</td>
+        <td id="khushi-due"></td>
+      </tr>
+      <tr>
+        <td>রুবাইদা</td>
+        <td>১০ম</td>
+        <td>মে</td>
+        <td class="paid">Paid</td>
+        <td class="due">Due</td>
+        <td id="rubai-due"></td>
+      </tr>
+      <tr>
+        <td>অন্তরা</td>
+        <td>১০ম</td>
+        <td>মে</td>
+        <td class="paid">Paid</td>
+        <td class="paid">Paid</td>
+        <td id="ontra-due"></td>
+      </tr>
+      <tr>
+        <td>মুন্টি</td>
+        <td>১০ম</td>
+        <td>মে</td>
+        <td class="paid">Paid</td>
+        <td class="paid">Paid</td>
+        <td id="munty-due"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    // Calculate dues dynamically
+    function calculateDue(name, dueCount) {
+      document.getElementById(name + "-due").innerText = "৳" + (dueCount * 800);
+    }
+
+    calculateDue("sadika", 2); // মে, জুন
+    calculateDue("nadia", 1);  // জুন
+    calculateDue("khushi", 1); // জুন
+    calculateDue("rubai", 1);  // জুন
+    calculateDue("ontra", 0);  // কোনো বাকি নেই
+    calculateDue("munty", 0);  // কোনো বাকি নেই
+  </script>
+
+</body>
+</html>
